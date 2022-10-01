@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// tsdrpfc
+import "./App.css";
+import { Footer, Header } from "./components/common";
+import Student from "./features/student/Student";
+import { StudentModel } from "./models";
 
 function App() {
+  const john: StudentModel = {
+    name: "John",
+    age: 34,
+    isHero: false,
+  };
+
+  function handleStudentClick(student: StudentModel) {
+    console.log("student click");
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Student student={john} onClick={handleStudentClick} />
+      <Footer />
     </div>
   );
 }
 
 export default App;
+
+// tsrpfc
+// import * as React from 'react';
+
+// export interface IAppProps {
+// }
+
+// export function App (props: IAppProps) {
+//   return (
+//     <div>
+
+//     </div>
+//   );
+// }
