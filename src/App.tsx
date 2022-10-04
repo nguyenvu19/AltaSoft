@@ -4,6 +4,7 @@ import { bindActionCreators } from "redux";
 import "./App.css";
 import { Footer, Header } from "./components/common";
 import Student from "./features/student/Student";
+import FirebaseApp from "./firebase/FirebaseApp";
 import { StudentModel } from "./models";
 import { actionCreators, State } from "./redux";
 
@@ -31,10 +32,13 @@ function App() {
       <Header />
       <Student student={john} onClick={handleStudentClick} />
       <Footer />
+
       <h1>{amount}</h1>
       <button onClick={() => depositMoney(1000)}>depositMoney</button>
       <button onClick={() => withDrawMoney(500)}>withDrawMoney</button>
       <button onClick={() => bankRuptMoney()}>bankRuptMoney</button>
+
+      <FirebaseApp />
     </div>
   );
 }
